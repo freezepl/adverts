@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @advert.title %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @advert.category_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @advert.user_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @advert.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @advert.price %>
+</p>
+
+<p>
+  <b>Expire:</b>
+  <%= @advert.expire %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @advert.phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_advert_path(@advert) %> |
+<%= link_to 'Back', adverts_path %>
