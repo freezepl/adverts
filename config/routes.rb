@@ -1,5 +1,8 @@
 Adverts::Application.routes.draw do
-  get "home/index"
+  
+  authenticated :user do
+  root :to => 'home#index'
+  end
 
   devise_for :admins
 
