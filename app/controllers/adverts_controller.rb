@@ -1,6 +1,7 @@
 class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
+  before_filter :authenticate_user!, :except => [:show, :index]
   def index
     @adverts = Advert.all
 
