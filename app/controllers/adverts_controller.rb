@@ -42,8 +42,8 @@ class AdvertsController < ApplicationController
   # POST /adverts.json
   def create
     @advert = Advert.new(params[:advert])
-    @task.user_id = current_user.id
-    
+    @advert.user_id = current_user.id
+
     respond_to do |format|
       if @advert.save
         format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
