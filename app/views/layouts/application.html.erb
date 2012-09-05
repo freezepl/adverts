@@ -44,12 +44,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Adverts</a>
+          <a class="brand" href="/">Adverts</a>
           <div class="container-fluid nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+            <ul class="nav nav-pills pull-right">
+              <% if user_signed_in? %>
+                <li><%= link_to(edit_user_registration_path) do %>  
+                Signed in as <%= current_user.email %>  
+                <% end %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>  
+                </li>
+              <% else %>  
+                <li><%= link_to "Register", new_user_registration_path %></li>
+                <li><%= link_to "Sign in", new_user_session_path %></li>  
+              <% end %>  
+
             </ul>
           </div><!--/.nav-collapse -->
         </div>
