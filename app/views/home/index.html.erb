@@ -1,11 +1,21 @@
 <h1>Home#index</h1>
 <p>Listing available adverts:</p>
-<ul>
+<table class="table-hover">
+  <tr>
+  	<th>Category</th>
+    <th>Title</th>
+    <th>Price</th>
+  </tr>
+
 <% @adverts.each do |advert| %>
-  <li>
-  <%= link_to(advert) do %>
-  <strong><%= advert.title %></strong> -- <span>Check it out!</span>
-  </li>	
-  <% end %>
-</ul>
+  <tr>
+  	<td><%= advert.category_id %></td>
+ 	<td> <%= link_to(advert) do %>
+  		<strong><%= advert.title %></strong><br>
+  		<%= advert.description %>
+  		  <% end %>
+  	</td>
+  	<td><%= advert.price %></td>	
+  </tr>	
 <% end %>
+</table>
