@@ -24,7 +24,9 @@
     <td><%= advert.expire %></td>
     <td><%= advert.phone %></td>
     <td><%= link_to 'Show', advert %></td>
-    <td><%= link_to 'Edit', edit_advert_path(advert) %></td>
+    <td><% if can? :update, @advert %>
+            <%= link_to 'Edit', edit_advert_path(advert) %>
+        <% end %></td>
     <td><%= link_to 'Destroy', advert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
