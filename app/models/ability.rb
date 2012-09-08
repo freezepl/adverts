@@ -8,6 +8,9 @@ class Ability
       if user.role == "admin"
         can :manage, :all
       else
+        can :read, :all
+      end
+      if user .role == "user"
         can :manage, Advert, :user_id => user.id
       end
     
