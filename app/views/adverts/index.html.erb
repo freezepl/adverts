@@ -1,6 +1,6 @@
 <h1>Listing adverts</h1>
 
-<table class="table-hover">
+<table class="table table-hover">
   <tr>
     <th>Title</th>
     <th>Category</th>
@@ -24,7 +24,7 @@
     <td><%= advert.expire %></td>
     <td><%= advert.phone %></td>
     <td><%= link_to 'Show', advert %></td>
-    <td>% if @user.id == advert.user_id %>
+    <td><% if @user.id == advert.user_id %>
             <%= link_to 'Edit', edit_advert_path(advert) %>
         <% end %></td>
     <td><% if @user.id == advert.user_id %>
