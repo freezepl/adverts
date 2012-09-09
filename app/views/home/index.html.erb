@@ -1,5 +1,17 @@
-<h1>Home#index</h1>
-<p>Listing available adverts:</p>
+<h1>Welcome to brand new AdvertsOnRails!</h1>
+<div class="row-fluid">
+  <div class="span12">
+    <h2>Choose your path!</h2>
+    <div class="row-fluid">
+      <div class="span6">
+        <%= link_to 'Add New Advert', new_advert_path, class: "btn btn-danger bt-large" %>
+      </div>
+      <div class="span6">Search Advert</div>
+    </div>
+  </div>  
+</div>
+<div>
+<h3>Listing available adverts:</h3>
 <table class="table table-hover">
   <tr>
   	<th>Category</th>
@@ -19,3 +31,4 @@
   </tr>	
 <% end %>
 </table>
+</div>
