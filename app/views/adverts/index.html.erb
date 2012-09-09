@@ -1,10 +1,9 @@
-<h1>Listing adverts</h1>
+<h1>Listing Your adverts</h1>
 
 <table class="table table-hover">
   <tr>
     <th>Title</th>
     <th>Category</th>
-    <th>User</th>
     <th>Description</th>
     <th>Price</th>
     <th>Expire</th>
@@ -18,7 +17,6 @@
   <tr>
     <td><%= advert.title %></td>
     <td><%= advert.category_id %></td>
-    <td><%= advert.user_id %></td>
     <td><%= advert.description %></td>
     <td><%= advert.price %></td>
     <td><%= advert.expire %></td>
@@ -36,4 +34,4 @@
 
 <br />
 
-<%= link_to 'New Advert', new_advert_path %>
+<%= link_to 'Add New Advert', new_advert_path, class: "btn btn-danger"  %>

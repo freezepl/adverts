@@ -1,12 +1,11 @@
 class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show]
   load_and_authorize_resource
   
   def index
     @adverts = current_user.adverts
-    @user = User.find_by_id(current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
