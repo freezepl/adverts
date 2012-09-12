@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br />
-    <%= f.select :category_id, Category.find(:all, :order => "name").collect {|c| [c.name, c.id]}  %>
+    <%= f.select :category_id, category_list %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
