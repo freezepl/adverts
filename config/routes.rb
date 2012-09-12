@@ -1,5 +1,7 @@
 Adverts::Application.routes.draw do
   
+  resources :categories
+
   resources :adverts
 
   authenticated :user do
