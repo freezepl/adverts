@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :cols => 130, :rows => 10 %>
   </div>
   <div class="field">
     <%= f.label :price %><br />
@@ -36,17 +36,25 @@
     <%= f.number_field :phone %>
   </div>
     <%= f.fields_for :attachments do |attachment_form|  %>
-   <div class="field">
-    <%= attachment_form.label :description %><br />
-    <%= attachment_form.text_area :description %>
-    </div>
-    <div class="field">
-    <%= attachment_form.label :file %><br />
-    <%= attachment_form.file_field :file %>
-    </div>
-    <%= attachment_form.link_to_remove "Remove this attachment" %>
-  <% end %>
-  <%= f.link_to_add "Add attachment", :attachments %>
+      <div class="row-fluid">
+        <div class="span4 show-grid">
+         <div class="field">
+          <%= attachment_form.label :description %><br />
+          <%= attachment_form.text_field :description %>
+          </div>
+        </div>
+        <div class="span4 show-grid">
+          <div class="field">
+          <%= attachment_form.label :file %><br />
+          <%= attachment_form.file_field :file %>
+          <%= attachment_form.link_to_remove "Remove this attachment" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <div class="actions">
+    <%= f.link_to_add "Add attachment", :attachments %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
