@@ -11,6 +11,9 @@
   <dd><%= @advert.expire %></dd>
   <dt>Phone:</dt>
   <dd><%= @advert.phone %></dd>
-</dl>
-
+  <% for attachment in @advert.attachments %>
+    <dt>Photo:</dt>
+    <dd><%= image_tag attachment.file_url %><br><%= attachment.description %></dd>
+  <% end %>
+</dl>  
 <%= link_to 'Edit', edit_advert_path(@advert), class: "btn btn-danger" %>
