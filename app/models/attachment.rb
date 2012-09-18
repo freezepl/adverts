@@ -1,4 +1,5 @@
 class Attachment < ActiveRecord::Base
-  belongs_to :attachable
+  belongs_to :attachable, :polymorphic => true
   attr_accessible :description, :file
+  mount_uploader :file, FileUploader
 end
