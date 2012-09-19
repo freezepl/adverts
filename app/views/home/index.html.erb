@@ -15,19 +15,24 @@
 <table class="table table-hover">
   <tr>
   	<th>Category</th>
+    <th></th>
     <th>Title</th>
     <th>Price</th>
   </tr>
 
 <% @adverts.each do |advert| %>
   <tr>
-  	<td><%= advert.category_id %></td>
- 	<td> <%= link_to(advert) do %>
-  		<strong><%= advert.title %></strong><br>
-  		<%= advert.description %>
+  	<td><%= advert.category.name %></td>
+    <td><% advert.attachments.each do |photo| %>
+          <%= image_tag photo.file_url(:thumb) %>
+        <% end %>
+    </td>
+   	<td><%= link_to(advert) do %>
+      		<strong><%= advert.title %></strong><br>
+      		<%= advert.description %>
   		  <% end %>
   	</td>
-  	<td><%= advert.price %></td>	
+  	<td><%= advert.price %> zł</td>	
   </tr>	
 <% end %>
 </table>
