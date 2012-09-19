@@ -7,7 +7,10 @@ class ApplicationController < ActionController::Base
   end
 
   before_filter :categories
-
+  def categories
+    @categories = Category.all
+  end
+  
   def categories
     @categories = Category.all
   end
