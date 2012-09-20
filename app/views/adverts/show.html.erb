@@ -9,6 +9,8 @@
   <dd><%= @advert.price %> zł</dd>
   <dt>Expire:</dt>
   <dd><%= @advert.expire %></dd>
+  <dt>Added:</dt>
+  <dd><%= @advert.created_at.to_formatted_s(:short) %></dd>
   <dt>Phone:</dt>
   <dd><%= @advert.phone %></dd>
   <% for attachment in @advert.attachments %>

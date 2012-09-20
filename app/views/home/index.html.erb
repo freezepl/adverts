@@ -18,6 +18,7 @@
     <th></th>
     <th>Title</th>
     <th>Price</th>
+    <th>Added</th>
   </tr>
 
 <% @adverts.each do |advert| %>
@@ -33,6 +34,7 @@
   		  <% end %>
   	</td>
   	<td><%= advert.price %> zł</td>	
+    <td><%= advert.created_at.to_formatted_s(:short) %></td>
   </tr>	
 <% end %>
 </table>
