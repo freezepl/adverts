@@ -16,3 +16,5 @@
 #ignore uploaded files
 /public/uploads
 /public/assets
+#joe saves
+*~
