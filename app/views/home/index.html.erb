@@ -30,7 +30,7 @@
     </td>
    	<td><%= link_to(advert) do %>
       		<strong><%= advert.title %></strong><br>
-      		<%= advert.description %>
+      		<%= truncate_wrap(advert.description) %>
   		  <% end %>
   	</td>
   	<td><%= advert.price %> zł</td>	
