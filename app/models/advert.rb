@@ -8,5 +8,5 @@ class Advert < ActiveRecord::Base
   rolify
 
   extend FriendlyId
-    friendly_id :title
+    friendly_id :title, use: :slugged
 end
