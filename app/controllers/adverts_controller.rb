@@ -18,10 +18,8 @@ class AdvertsController < ApplicationController
   # GET /adverts/1.json
   def show
     @advert = Advert.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @advert }
+    if request.path != advert_path(@advert)
+      redirect_to @advert, status: :moved_permanently
     end
   end
 
