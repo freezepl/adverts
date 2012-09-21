@@ -6,4 +6,7 @@ class Advert < ActiveRecord::Base
   accepts_nested_attributes_for :attachments
   resourcify
   rolify
+
+  extend FriendlyId
+    friendly_id :title
 end
