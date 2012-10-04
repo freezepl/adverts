@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
+  before_filter :authenticate_admin!
   def index
     @categories = Category.all
 
