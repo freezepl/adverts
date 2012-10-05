@@ -14,7 +14,7 @@
 /log/*.log
 /tmp
 #ignore uploaded files
-/public/uploads
-/public/assets
+/public/uploads/*
+/public/assets/*
 #joe saves
 *~
