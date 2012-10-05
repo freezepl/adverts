@@ -5,7 +5,10 @@ class AdvertsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @adverts = current_user.adverts
+    @search = current_user.adverts.search(params[:search])
+    @adverts = @search.all
+
+    # @adverts = current_user.adverts
     @users = User.find_by_id(current_user.id)
 
     respond_to do |format|

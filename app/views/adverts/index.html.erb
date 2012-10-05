@@ -2,13 +2,12 @@
 
 <table class="table table-hover">
   <tr>
-    <th>Title</th>
-    <th>Category</th>
+    <th><%= sort_link @search, :title %></th>
+    <th><%= sort_link @search, :category_name, "Category" %></th>
     <th>Description</th>
-    <th>Price</th>
-    <th>Expire</th>
-    <th>Added</th>
-    <th>Phone</th>
+    <th><%= sort_link @search, :price %></th>
+    <th><%= sort_link @search, :expire %></th>
+    <th><%= sort_link @search, :added %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,11 +17,10 @@
   <tr>
     <td><%= advert.title %></td>
     <td><%= advert.category.name %></td>
-    <td><%= advert.description %></td>
+    <td><%= truncate_wrap(advert.description) %></td>
     <td><%= advert.price %></td>
     <td><%= advert.expire %></td>
     <td><%= advert.created_at.to_formatted_s(:short) %></td>
-    <td><%= advert.phone %></td>
     <td><%= link_to 'Show', advert %></td>
     <td><% if @users.id == advert.user_id %>
             <%= link_to 'Edit', edit_advert_path(advert) %>
