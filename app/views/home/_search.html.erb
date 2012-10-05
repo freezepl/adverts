@@ -1,9 +1,15 @@
   <%= form_for @search, :url => root_path do |f| %>
     <%= f.label :title_contains %>
-    <%= f.text_field :title_contains %><br />
-    <%= f.label :price_gte, "Price ranges from" %><br />
-    <%= f.text_field :price_gte, :size => 8 %>
-    <%= f.label :price_lte, "to" %>
-    <%= f.text_field :price_lte, :size => 8 %>
+    <%= f.text_field :title_contains %><br>
+    <a href="#" class="show_hide">More options</a>
+    <div class="slidingDiv">
+      <%= f.label :price_gte, "Price ranges from" %><br>
+      <%= f.text_field :price_gte, :size => 8 %>
+      <%= f.label :price_lte, "to" %>
+      <%= f.text_field :price_lte, :size => 8 %>
+      <br>
+      <a href="#" class="show_hide">Hide</a>
+    </div>
+    <br>
     <%= f.submit %>
   <% end %>

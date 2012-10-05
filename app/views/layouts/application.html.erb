@@ -35,11 +35,11 @@
                 <li><%= link_to(edit_user_registration_path) do %>  
                 Signed in as <%= current_user.email %>  
                 <% end %></li>
-                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>  
+                <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %>  
                 </li>
               <% else %>  
                 <li><%= link_to "Register", new_user_registration_path %></li>
-                <li><%= link_to "Sign in", new_user_session_path %></li>  
+                <li><%= link_to "Login", new_user_session_path %></li>  
               <% end %>  
 
             </ul>
@@ -55,7 +55,7 @@
             <ul class="nav nav-list">
               <li class="nav-header">Categories</li>
               <% @categories.each do |category| %>
-              <li><%= category.name %></li>
+              <li><%= link_to category.name, root_path(:search => "category_name_equals") %></li>
               <% end %>
             </ul>
           </div><!--/.well -->
