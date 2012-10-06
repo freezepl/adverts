@@ -5,7 +5,7 @@ Adverts::Application.routes.draw do
   resources :adverts
 
   authenticated :user do
-  root :to => 'home#index'
+  root :to => 'adverts#index'
   end
 
   devise_for :admins
