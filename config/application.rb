@@ -58,5 +58,11 @@ module Adverts
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    console do
+      require "hirb"
+      Hirb.enable
+      require "awesome_print"
+    end
   end
 end

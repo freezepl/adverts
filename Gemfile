@@ -30,7 +30,8 @@ gem 'nested_form'
 gem 'mini_magick'
 gem "friendly_id", ">= 4.0.1"
 gem "meta_search"
-
+gem "awesome_print"
+gem "hirb-unicode"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
