@@ -20,3 +20,25 @@
   </tr>
 <% end %>
 </table>
+
+<h2>List all Adverts</h2>
+<table class="table table-hover">
+  <tr>
+    <th>Id</th>
+    <th>Email</th>
+    <th>Title</th>
+    <th>Created At</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @adverts.each do |a| %>
+  <tr>
+    <td><%= a.id %></td>
+    <td><%= a.user.email %></td>
+    <td><%= a.title %></td>
+    <td><%= a.created_at %></td>
+    <td><%= link_to 'Edit', admin_edit_advert_path(a) %></td>
+    <td><%= link_to 'Destroy', admin_delete_advert_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

@@ -20,6 +20,9 @@ Adverts::Application.routes.draw do
 
   match "admin" => "admin#index", :as => :admin
   match "admin/delete/user/:id" => "admin#destroy_user", :via => "delete", :as => :admin_delete_user
+  match "admin/edit/advert/:id" => "admin#edit_advert", :via => "get", :as => :admin_edit_advert
+  match "admin/edit/advert/:id" => "admin#update_advert", :via => "put", :as => :admin_edit_advert
+  match "admin/delete/advert/:id" => "admin#destroy_advert", :via => "delete", :as => :admin_delete_advert
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
