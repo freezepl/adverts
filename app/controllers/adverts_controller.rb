@@ -2,6 +2,7 @@ class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
   before_filter :authenticate_user!, :except => [:show]
+  before_filter :check_user, :only => [:edit]
   load_and_authorize_resource
   
   def index
@@ -84,6 +85,22 @@ class AdvertsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to adverts_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+    def check_user
+      # @adverts = Advert.all
+      @advert = Advert.find(params[:id])
+      unless current_user.id == @advert.user_id
+        redirect_to root_url, alert: 'You dont have permission to edit this task!'
+      else
+        view = params[:action]
+
+      # if current_user.id == @task.user_id
+      #   render "edit"
+      # else
+      #   render :status => 404  
     end
   end
 end

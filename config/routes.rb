@@ -5,7 +5,7 @@ Adverts::Application.routes.draw do
   resources :adverts
 
   authenticated :user do
-  root :to => 'adverts#index'
+  root :to => 'home#index'
   end
 
   authenticated :admin do
@@ -18,6 +18,7 @@ Adverts::Application.routes.draw do
 
   root :to => "home#index"
 
+  match "home" => "home#index", :as => :home
   match "admin" => "admin#index", :as => :admin
   match "admin/delete/user/:id" => "admin#destroy_user", :via => "delete", :as => :admin_delete_user
   match "admin/edit/advert/:id" => "admin#edit_advert", :via => "get", :as => :admin_edit_advert
