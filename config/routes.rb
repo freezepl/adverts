@@ -8,11 +8,18 @@ Adverts::Application.routes.draw do
   root :to => 'adverts#index'
   end
 
+  authenticated :admin do
+  root :to => 'admin#index'
+  end
+
   devise_for :admins
 
   devise_for :users
 
   root :to => "home#index"
+
+  match "admin" => "admin#index", :as => :admin
+  match "admin/delete/user/:id" => "admin#destroy_user", :via => "delete", :as => :admin_delete_user
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,22 @@
+<h1>Welcome Admin!</h1> 
+<h2>List all Users</h2>
+<table class="table table-hover">
+  <tr>
+    <th>Id</th>
+    <th>Email</th>
+    <th>Sign In Count</th>
+    <th>Created At</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @users.each do |u| %>
+  <tr>
+    <td><%= u.id %></td>
+    <td><%= u.email %></td>
+    <td><%= u.sign_in_count %></td>
+    <td><%= u.created_at %></td>
+    <td><%= link_to 'Edit', registration_path(u) %></td>
+    <td><%= link_to 'Destroy', admin_delete_user_path(u.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
