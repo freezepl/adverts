@@ -2,14 +2,29 @@ class AdminController < ApplicationController
   before_filter :authenticate_admin!
 
   def index
-    @users = User.order("created_at DESC")
+    @users = User.order("created_at DESC").limit(5)
     @admins = Admin.all
-    @adverts = Advert.order("created_at DESC")
+    @adverts = Advert.order("created_at DESC").limit(5)
   end
 
   def show
     @users = User.all
     @admins = Admin.all
+  end
+
+  def index_users
+    @users = User.order("created_at DESC")  
+  end
+  
+  def destroy_user
+    @user = User.find(params[:id])
+    @user.destroy
+
+    redirect_to admin_url, notice: 'User was successfully deleted.'
+  end
+
+  def index_adverts
+    @adverts = Advert.order("created_at DESC")  
   end
 
   def edit_advert
@@ -26,13 +41,6 @@ class AdminController < ApplicationController
         format.html { render action: "edit_advert" }
       end
     end
-  end
-  
-  def destroy_user
-    @user = User.find(params[:id])
-    @user.destroy
-
-    redirect_to admin_url, notice: 'User was successfully deleted.'
   end
 
   def destroy_advert

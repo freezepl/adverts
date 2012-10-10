@@ -15,12 +15,12 @@
     <td><%= u.email %></td>
     <td><%= u.sign_in_count %></td>
     <td><%= u.created_at %></td>
-    <td><%= link_to 'Edit', registration_path(u) %></td>
+    <td><%= link_to 'Edit', edit_user_registration_path(u) %></td>
     <td><%= link_to 'Destroy', admin_delete_user_path(u.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
-
+<p><%= link_to "Show all users", admin_list_users_path %></p>
 <h2>List all Adverts</h2>
 <table class="table table-hover">
   <tr>
@@ -42,3 +42,4 @@
   </tr>
 <% end %>
 </table>
+<p><%= link_to "Show all adverts", admin_list_adverts_path %></p>
